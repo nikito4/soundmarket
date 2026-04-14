@@ -50,4 +50,3 @@ require __DIR__ . '/inc/header.php';
 </table>
 </div>
 <?php require __DIR__ . '/inc/footer.php'; ?>
-пенис
