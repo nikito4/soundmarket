@@ -21,6 +21,7 @@ function require_login(): void {
 }
 
 function login_user(int $id, string $username): void {
+  session_regenerate_id(true);
   $_SESSION['user_id'] = $id;
   $_SESSION['username'] = $username;
 }
@@ -32,4 +33,17 @@ function logout_user(): void {
 
 function current_username(): string {
   return (string)($_SESSION['username'] ?? '');
+}
+
+// Потребителят с id=1 (първи регистриран) е администратор.
+function is_admin(): bool {
+  return is_logged_in() && current_user_id() === 1;
+}
+
+function require_admin(): void {
+  require_login();
+  if (!is_admin()) {
+    http_response_code(403);
+    exit('Нямате достъп до тази страница.');
+  }
 }

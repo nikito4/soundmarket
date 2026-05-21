@@ -33,7 +33,6 @@ $title = 'Регистрация — ' . APP_NAME;
 require __DIR__ . '/inc/header.php';
 ?>
 <div class="auth-wrap">
-  <div class="container">
     <div class="auth-card">
       <div class="page-head" style="padding: 0 0 10px;">
         <h2>Регистрация</h2>
@@ -88,6 +87,5 @@ require __DIR__ . '/inc/header.php';
 
       </form>
     </div>
-  </div>
 </div>
 <?php require __DIR__ . '/inc/footer.php'; ?>
